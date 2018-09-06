@@ -1,0 +1,13 @@
+# github.com/cockroachdb/examples-orms v0.0.0-20180904145438-d7beafa9fb30
+github.com/cockroachdb/examples-orms/go/gorm/model
+# github.com/jinzhu/gorm v1.9.1
+github.com/jinzhu/gorm
+github.com/jinzhu/gorm/dialects/postgres
+# github.com/jinzhu/inflection v0.0.0-20180308033659-04140366298a
+github.com/jinzhu/inflection
+# github.com/julienschmidt/httprouter v0.0.0-20180715161854-348b672cd90d
+github.com/julienschmidt/httprouter
+# github.com/lib/pq v1.0.0
+github.com/lib/pq
+github.com/lib/pq/hstore
+github.com/lib/pq/oid

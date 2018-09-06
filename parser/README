@@ -1,0 +1,2 @@
+RECEIVES: String (link to youtube playlist)
+RETURNS: String (Title of youtube song)
