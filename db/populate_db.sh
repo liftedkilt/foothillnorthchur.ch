@@ -12,12 +12,12 @@ fi
 
 if [[ $1 == "playlist" ]]; then
     curl -XPOST localhost:8888/playlist -d '{
-        "Video1": 1,
-        "Video2": 3,
-        "Video3": 5,
-        "Video4": 6,
-        "Video5": 2,
-        "Video6": 4
+        "Video1": "Come all ye Faithful",
+        "Video2": "Amazing Grace",
+        "Video3": "A Mighty Fortress",
+        "Video4": "Be Thou my Vision",
+        "Video5": "I will Build My Church",
+        "Video6": "Oh For a Thousand Tongues"
     }'
 
 fi

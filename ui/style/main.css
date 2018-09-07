@@ -6,30 +6,58 @@
 .song-box {
   display: grid;
   height: 100%;
-  min-width: 60%;
-  max-width: 1080px;
+  width: 100%;
   grid-template-rows: repeat(6 1fr);
   grid-template-columns: 1fr;
 }
 
 .song-button {
-  border: 1px solid black;
+  border: 5px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  background-color: darkslategray;
   font-family: "Krona One", sans-serif;
-  font-size: 24px;
+  font-size: 48px;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
 }
 .song-button .text {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: white;
   justify-self: center;
 }
 
 #button-1 {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.ytimg.com/vi/roQovDZeAWE/hqdefault.jpg");
-  background-position: center;
-  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://i.ytimg.com/vi/roQovDZeAWE/hqdefault.jpg");
+}
+
+#button-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://i.ytimg.com/vi/NG0vH4WYChQ/hqdefault.jpg");
+}
+
+#button-3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://i.ytimg.com/vi/oNeP7bGagqg/hqdefault.jpg");
+}
+
+#button-4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://i.ytimg.com/vi/ihJAJA4ibEs/hqdefault.jpg");
+}
+
+#button-5 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://i.ytimg.com/vi/xKmQbV7_YzU/hqdefault.jpg");
+}
+
+#button-6 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("https://i.ytimg.com/vi/VGFQ6he9Wx8/hqdefault.jpg");
+}
+
+a {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,4 @@
+:8889
+proxy / localhost:8888
+tls off
+cors

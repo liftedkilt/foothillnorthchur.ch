@@ -6,9 +6,9 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/liftedkilt/foothillnorthchur.ch/db/model"
 	"github.com/go-xorm/xorm"
 	"github.com/julienschmidt/httprouter"
+	"github.com/liftedkilt/foothillnorthchur.ch/db/model"
 )
 
 // Server is an http server that handles REST requests.
@@ -98,6 +98,7 @@ func (s *Server) getLatestPlaylist(w http.ResponseWriter, r *http.Request, _ htt
 	var playlist []model.Playlist
 
 	s.db.Desc("Id").Limit(1).Find(&playlist)
+	writeJSON(w, playlist)
 	writeJSONResult(w, playlist)
 	return
 }
@@ -133,6 +134,14 @@ func writeJSONResult(w http.ResponseWriter, res interface{}) {
 	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	w.WriteHeader(http.StatusOK)
 	if err := json.NewEncoder(w).Encode(res); err != nil {
+		panic(err)
+	}
+}
+
+func writeJSON(w http.ResponseWriter, res interface{}) {
+	w.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	w.WriteHeader(http.StatusOK)
+	if err := json.Marshal(res); err != nil {
 		panic(err)
 	}
 }
