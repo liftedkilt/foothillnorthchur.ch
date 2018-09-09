@@ -4,21 +4,21 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/liftedkilt/foothillnorthchur.ch/api/api"
 	"github.com/gorilla/mux"
+	"github.com/liftedkilt/foothillnorthchur.ch/api/api"
 )
 
 const (
-	port = ":8080"
+	port = ":8081"
 )
 
 func main() {
 	router := mux.NewRouter()
+
+	// Playlist routes
 	router.HandleFunc("/playlist", api.GetPlaylistLatest).Methods("GET")
-	router.HandleFunc("/playlist/{week}", api.GetPlaylistByWeek).Methods("GET")
-	router.HandleFunc("/playlist/{week}", api.CreatePlaylistByWeek).Methods("POST")
-	router.HandleFunc("/songs/{title}", api.GetSongByTitle).Methods("GET")
-	router.HandleFunc("/songs", api.GetSongs).Methods("GET")
+	router.HandleFunc("/playlist/{date}", api.GetPlaylist).Methods("GET")
+	router.HandleFunc("/playlist/{date}", api.CreatePlaylist).Methods("POST")
 
 	log.Println("Running API server on port", port)
 	log.Fatal(http.ListenAndServe(port, router))

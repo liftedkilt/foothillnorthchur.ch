@@ -1,0 +1,106 @@
+ui
+
+
+//
+//playlist-parser
+//
+
+POST /playlist/{playlistID}
+returns:
+{
+	"playlist": [
+			{
+				"order": 1,
+				"videoID": "aawofiacanwea",
+			},
+			{
+				"order": 2,
+				"videoID": "srtvsdtvzsetv",
+			}]
+}
+
+
+//
+// API
+//
+
+
+// /playlist
+
+GET			/playlist
+returns:
+{
+	"_id": 20180909,
+	"playlistID": asdfljansdzffnaf
+	"playlist": [
+		{
+			"order": 1,
+			"videoID": "aawofiacanwea",
+		},
+		{
+			"order": 2,
+			"videoID": "srtvsdtvzsetv",
+		}]
+}
+
+GET			/playlist/{date}
+returns:
+{
+	"_id": {date},
+	"playlistID": asdfljansdzffnaf
+	"playlist": [
+		{
+			"order": 1,
+			"videoID": "aawofiacanwea",
+		},
+		{
+			"order": 2,
+			"videoID": "srtvsdtvzsetv",
+		}]
+}
+
+POST /playlist/{date}
+body:
+{ "playlistID": "asdflkajsdflh"}
+
+date = 20060102 (YYYYMMDD)
+returns: 200 OK
+
+
+// /video
+
+GET /video/{videoID}
+returns:
+{
+	"_id": {videoID},
+	"youtubeTitle": "Amazing Grace (Chris Tomlin)",
+	"songTitle": "Amazing Grace",
+	"songLyrics": "Amazing Grace, how sweet the sound..."
+}
+
+POST /video/{videoID}
+data:
+{
+	"_id": {videoID},
+	"youtubeTitle": "Amazing Grace (Chris Tomlin)",
+	"songTitle": "Amazing Grace",
+	"songLyrics": "Amazing Grace, how sweet the sound..."
+}
+returns: 200 OK
+
+DELETE /video/{videoID}
+returns: 204 No Content
+
+
+
+
+TODO:
+image-grabber
+
+
+
+name: UI
+description: Frontend written with Vue.js
+language: HTML/CSS/VueJS
+service dependencies: API
+stateful: no

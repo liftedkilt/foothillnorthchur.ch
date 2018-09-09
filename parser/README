@@ -1,2 +1,15 @@
-RECEIVES: String (link to youtube playlist)
-RETURNS: String (Title of youtube song)
+POST /playlist/{playlistID}
+
+returns:
+[
+	{
+		"order": 1,
+		"videoID": "asdfa2sldkf",
+
+	},
+	{
+		"order": 2,
+		"videoID": "zsnzrliu2cn",
+
+	}
+]

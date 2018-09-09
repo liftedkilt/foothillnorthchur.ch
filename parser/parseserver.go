@@ -5,8 +5,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/liftedkilt/foothillnorthchur.ch/parser/parser"
 	"github.com/gorilla/mux"
+	"github.com/liftedkilt/foothillnorthchur.ch/parser/parser"
 )
 
 const (
@@ -27,7 +27,7 @@ func parsePlaylist(w http.ResponseWriter, r *http.Request) {
 
 	log.Println("Processing playlist:", url)
 
-	titles := parser.Parse(url)
+	titles := parser.Parse(params["playlistID"])
 	log.Printf("Playlist processed: %+v\n", titles)
 
 	json.NewEncoder(w).Encode(titles)
