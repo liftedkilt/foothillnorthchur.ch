@@ -1,0 +1,5 @@
+baseURL = "http://liftedkilt.github.io/"
+languageCode = "en-us"
+title = "Foothill North Lyrics"
+theme = "hugo-paper"
+disablePathToLower = true
