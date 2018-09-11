@@ -25,12 +25,12 @@ func GetPlaylistLatest(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetPlaylist(w http.ResponseWriter, r *http.Request) {
-	// params := mux.Vars(r)
-	// date := params["date"]
+	params := mux.Vars(r)
+	date := params["date"]
 
-	// playlist := db.GetPlaylistByDate(date)
+	playlist := db.GetPlaylist(date)
 
-	// json.NewEncoder(w).Encode(playlist)
+	json.NewEncoder(w).Encode(playlist)
 	return
 }
 
@@ -69,7 +69,7 @@ func CreatePlaylist(w http.ResponseWriter, r *http.Request) {
 	playlist.PlaylistID = playlistRequest.ID
 	playlist.Videos = parserResponse
 
-	// db.CreatePlaylist(date, playlist)
+	db.CreatePlaylist(date, *playlist)
 
 	// json.NewEncoder(w).Encode(titles)
 }

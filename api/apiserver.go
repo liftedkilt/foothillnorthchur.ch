@@ -15,16 +15,12 @@ const (
 func main() {
 	router := mux.NewRouter()
 
-	// Playlist routes
 	router.HandleFunc("/playlist", api.GetPlaylistLatest).Methods("GET")
+
 	router.HandleFunc("/playlist/{date}", api.GetPlaylist).Methods("GET")
 	router.HandleFunc("/playlist/{date}", api.CreatePlaylist).Methods("POST")
 
 	log.Println("Running API server on port", port)
+
 	log.Fatal(http.ListenAndServe(port, router))
 }
-
-// GET /playlist/latest
-// GET /playlist/{week}
-// GET /songs/{title}
-// GET /songs

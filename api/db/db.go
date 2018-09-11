@@ -1,5 +1,13 @@
 package db
 
-// import (
-// "gopkg.in/couchbase/gocb.v1"
-// )
+import (
+	"time"
+
+	cache "github.com/patrickmn/go-cache"
+)
+
+var store *cache.Cache
+
+func init() {
+	store = cache.New(8760*time.Hour, 10*time.Minute)
+}
