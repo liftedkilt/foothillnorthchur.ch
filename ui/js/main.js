@@ -1,26 +1,33 @@
 const vm = new Vue({
     el: '#info',
     data: {
-        playlist: [{
-            "id": "vAaFfoQy6s0",
-            "title": "Song Title"
+        playlist: [
+            {
+              "videoID": "xJxK7xWTqYg",
+              "videoTitle": "Our Great God - Fernando Ortega"
             },
             {
-            "id": "xJxK7xWTqYg",
-            "title": "Song Title"
+              "videoID": "GfAZhvMG2Ew",
+              "videoTitle": "His Love Can Never Fail - Kenwood Music"
             },
             {
-            "id": "xcJrrVphzNI",
-            "title": "Song Title"
+              "videoID": "i01ZER00X70",
+              "videoTitle": "O Sing My Soul"
             },
             {
-            "id": "xxGEUFwO2io",
-            "title": "Song Title"
+              "videoID": "gkvQsz7_Ui8",
+              "videoTitle": "Creation Sings The Father's Song"
             },
             {
-            "id": "yx5BB2J7R-8",
-            "title": "Song Title"
-            }]
+              "videoID": "SuGDU3hAZRk",
+              "videoTitle": "Escaping the Darkness"
+            },
+            {
+              "videoID": "iia_owSfv-8",
+              "videoTitle": "We Look to You [Official Lyric Video]"
+            }
+          ]
+
     // },
     // mounted() {
     //     axios.get("http://192.168.86.92:8889/playlist")
