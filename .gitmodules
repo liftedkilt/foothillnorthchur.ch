@@ -2,6 +2,3 @@
 	path = lyrics/public
 	url = git@github.com:liftedkilt/liftedkilt.github.io.git
 	branch = master
-[submodule "lyrics/lyrics/themes/hugo-paper"]
-	path = lyrics/lyrics/themes/hugo-paper
-	url = git@github.com:nanxiaobei/hugo-paper.git
