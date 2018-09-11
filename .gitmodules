@@ -2,3 +2,8 @@
 	path = lyrics/public
 	url = git@github.com:liftedkilt/liftedkilt.github.io.git
 	branch = master
+
+[submodule "lyrics/themes/kiss"]
+	path = lyrics/themes/kiss
+	url = git@github.com:ribice/kiss.git
+	branch = master
