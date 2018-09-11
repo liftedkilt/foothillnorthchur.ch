@@ -27,7 +27,7 @@ func parsePlaylist(w http.ResponseWriter, r *http.Request) {
 
 	log.Println("Processing playlist:", url)
 
-	titles := parser.Parse(params["playlistID"])
+	titles := parser.Parse(url)
 	log.Printf("Playlist processed: %+v\n", titles)
 
 	json.NewEncoder(w).Encode(titles)
