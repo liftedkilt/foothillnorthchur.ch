@@ -18,7 +18,7 @@ func main() {
 	router.HandleFunc("/playlist", api.GetPlaylistLatest).Methods("GET")
 
 	router.HandleFunc("/playlist/{date}", api.GetPlaylist).Methods("GET")
-	router.HandleFunc("/playlist/{date}", api.CreatePlaylist).Methods("POST")
+	router.HandleFunc("/playlist/{date}/{playlistID}", api.CreatePlaylist).Methods("POST")
 
 	log.Println("Running API server on port", port)
 

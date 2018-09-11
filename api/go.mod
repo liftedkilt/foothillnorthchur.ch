@@ -25,6 +25,7 @@ require (
 	github.com/revel/pathtree v0.0.0-20140121041023-41257a1839e9 // indirect
 	github.com/revel/revel v0.19.1 // indirect
 	github.com/xeonx/timeago v1.0.0-rc3 // indirect
+	golang.org/x/net v0.0.0-20180826012351-8a410e7b638d
 	gopkg.in/couchbase/gocb.v1 v1.4.1 // indirect
 	gopkg.in/couchbase/gocbcore.v7 v7.1.5 // indirect
 	gopkg.in/couchbaselabs/gocbconnstr.v1 v1.0.2 // indirect

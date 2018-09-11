@@ -6,10 +6,6 @@ type Playlist struct {
 }
 
 type Video struct {
-	VideoTitle int    `json:"videoTitle"`
 	VideoID    string `json:"videoID"`
-}
-
-type PlaylistPostRequest struct {
-	ID string `json:"id"`
+	VideoTitle string `json:"videoTitle"`
 }

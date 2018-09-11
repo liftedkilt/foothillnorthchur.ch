@@ -1,0 +1,4 @@
+:2015
+    cors
+    tls off
+    proxy / localhost:8081/

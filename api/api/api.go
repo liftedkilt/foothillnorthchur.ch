@@ -2,14 +2,17 @@ package api
 
 import (
 	"encoding/json"
-	"fmt"
-	"io/ioutil"
 	"log"
 	"net/http"
 
 	"github.com/gorilla/mux"
-	// "github.com/liftedkilt/foothillnorthchur.ch/api/db"
 	"github.com/liftedkilt/foothillnorthchur.ch/api/db"
+	"github.com/liftedkilt/foothillnorthchur.ch/api/parser"
+)
+
+var (
+	latest    string
+	playlists = map[string]db.Playlist{}
 )
 
 // Playlist routes
@@ -21,6 +24,10 @@ func GetPlaylistLatest(w http.ResponseWriter, r *http.Request) {
 	// Calculate latest playlist
 	// Retrieve playlist
 	// json.NewEncoder(w).Encode(playlist)
+
+	playlist := playlists[latest]
+
+	json.NewEncoder(w).Encode(playlist)
 	return
 }
 
@@ -28,7 +35,8 @@ func GetPlaylist(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	date := params["date"]
 
-	playlist := db.GetPlaylist(date)
+	// playlist := db.GetPlaylist(date)
+	playlist := playlists[date]
 
 	json.NewEncoder(w).Encode(playlist)
 	return
@@ -37,41 +45,56 @@ func GetPlaylist(w http.ResponseWriter, r *http.Request) {
 func CreatePlaylist(w http.ResponseWriter, r *http.Request) {
 	params := mux.Vars(r)
 	date := params["date"]
+	playlistID := params["playlistID"]
 
 	log.Println("Creating playlist for date", date)
 
-	// Parse playlist into struct
-	var playlistRequest = new(db.PlaylistPostRequest)
-	reqbytes, _ := ioutil.ReadAll(r.Body)
-	json.Unmarshal(reqbytes, &playlistRequest)
+	url := "https://youtube.com/playlist?list=" + playlistID
 
-	// Construct url and request playlist from parser
-	url := "http://localhost:8080/playlist/" + playlistRequest.ID
-	resp, err := http.Post(url, "", nil)
+	videos := parser.Parse(url)
 
-	if err != nil {
-		fmt.Println(err)
-		fmt.Println("ERROR: Failed to parse \"" + url + "\"")
-		return
+	playlist := db.Playlist{
+		PlaylistID: playlistID,
+		Videos:     videos,
 	}
 
-	// Extract response from body
-	b := resp.Body
-	defer b.Close()
-	resbytes, _ := ioutil.ReadAll(b)
+	playlists[date] = playlist
+	latest = date
 
-	// Unmarshal response into []Video
-	var parserResponse []db.Video
-	json.Unmarshal(resbytes, &parserResponse)
+	return
 
-	//  Initialize Playlist struct, and populate required fields
-	var playlist = new(db.Playlist)
-	playlist.PlaylistID = playlistRequest.ID
-	playlist.Videos = parserResponse
+	// // Parse playlist into struct
+	// var playlistRequest = new(db.PlaylistPostRequest)
+	// reqbytes, _ := ioutil.ReadAll(r.Body)
+	// json.Unmarshal(reqbytes, &playlistRequest)
 
-	db.CreatePlaylist(date, *playlist)
+	// // Construct url and request playlist from parser
+	// url := "http://localhost:8080/playlist/" + playlistRequest.ID
+	// resp, err := http.Post(url, "", nil)
 
-	// json.NewEncoder(w).Encode(titles)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	fmt.Println("ERROR: Failed to parse \"" + url + "\"")
+	// 	return
+	// }
+
+	// // Extract response from body
+	// b := resp.Body
+	// defer b.Close()
+	// resbytes, _ := ioutil.ReadAll(b)
+
+	// // Unmarshal response into []Video
+	// var parserResponse []db.Video
+	// json.Unmarshal(resbytes, &parserResponse)
+
+	// //  Initialize Playlist struct, and populate required fields
+	// var playlist = new(db.Playlist)
+	// playlist.PlaylistID = playlistRequest.ID
+	// playlist.Videos = parserResponse
+
+	// db.CreatePlaylist(date, *playlist)
+
+	// // json.NewEncoder(w).Encode(titles)
 }
 
 // Video routes
