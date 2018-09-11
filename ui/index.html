@@ -3,7 +3,7 @@
 <head>
 	<title>Foothill Norch Church</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.0/normalize.css">
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<link rel="stylesheet" href="style/main.css">
 </head>
@@ -12,12 +12,10 @@
 	<div id="song-box-wrapper">
 		<div class="song-box" id="info">
 			<div v-for="song in playlist">
-				<a :href="'https://liftedkilt.github.io/' + song.videoID"><div class="song-button gradient" v-bind:style="{ 'background-image': 'url(https://i.ytimg.com/vi/' + song.videoID + '/hqdefault.jpg)' }"></div></a>
+				<a :href="'https://liftedkilt.github.io/' + song.videoID"><div class="song-button gradient" v-bind:style="{ 'background-image': 'url(http://localhost:8080/q150/https://i.ytimg.com/vi/' + song.videoID + '/hqdefault.jpg)' }"></div></a>
 			</div>
 		</div>
 	</div>
 	<script src="./js/main.js"></script>
 </body>
 </html>
-
-
