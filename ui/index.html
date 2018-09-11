@@ -11,20 +11,22 @@
 
 <body>
 	<div id="song-box-wrapper">
-		<div class="song-box"  id="info">
+		<!-- <div class="song-box"  id="info">
 			<a v-bind:href="'/song/' + info.Id"><div class="song-button" id="button-1"><span class="text">{{ info.Video1 }}</span></div></a>
 			<a v-bind:href="'/song/' + info.Id"><div class="song-button" id="button-2"><span class="text">{{ info.Video2 }}</span></div></a>
 			<a v-bind:href="'/song/' + info.Id"><div class="song-button" id="button-3"><span class="text">{{ info.Video3 }}</span></div></a>
 			<a v-bind:href="'/song/' + info.Id"><div class="song-button" id="button-4"><span class="text">{{ info.Video4 }}</span></div></a>
 			<a v-bind:href="'/song/' + info.Id"><div class="song-button" id="button-5"><span class="text"></span></div></a>
 			<a v-bind:href="'/song/' + info.Id"><div class="song-button" id="button-6"><span class="text">{{ info.Video6 }}</span></div></a>
+		</div> -->
+		<div class="song-box" id="info">
+			<div v-for="song in playlist">
+				<a v-bind:href="'https://liftedkilt.github.io/' + song.id"><div class="song-button" ><span class="text">{{ song.title }}</span></div></a>
+				<!-- <a v-bind:href="'https://liftedkilt.github.io/' + song.id"><div class="song-button" v-bind:style="{ background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('https://i.ytimg.com/vi/' + {{ song.id }} + '/hqdefault.jpg');}"><span class="text">{{ song.title }}</span></div></a> -->
+			</div>
 		</div>
 	</div>
-<!--
-	<div id="app">
-		{{ results }}
-	</div>
-	<script src="./js/buttons.js"></script> -->
+
 	<script src="./js/main.js"></script>
 </body>
 

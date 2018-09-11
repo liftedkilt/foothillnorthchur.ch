@@ -9,21 +9,21 @@
   width: 100%;
   grid-template-rows: repeat(6 1fr);
   grid-template-columns: 1fr;
+  height: 100%;
 }
-
-.song-button {
-  border: 5px solid black;
+.song-box .song-button {
+  border: 2px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: darkslategray;
   font-family: "Krona One", sans-serif;
   font-size: 48px;
-  height: 100%;
+  height: calc(100% / 5);
   background-position: center;
   background-size: cover;
 }
-.song-button .text {
+.song-box .text {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   color: white;
   justify-self: center;
