@@ -1,4 +1,4 @@
-FROM abiosoft/abiosoft/caddy:latest
+FROM abiosoft/caddy:latest
 
 COPY ./Caddyfile /etc/Caddyfile
 

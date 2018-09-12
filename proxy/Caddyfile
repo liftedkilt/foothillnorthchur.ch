@@ -2,6 +2,6 @@
 	tls off
 	cors
 
-	proxy api.liftedkilt.xyz/ api:8080/playlist
+	proxy api.liftedkilt.xyz/ api:8888/playlist
 	proxy images.liftedkilt.xyz/ images:8080/
 	proxy ui.liftedkilt.xyz/ ui/

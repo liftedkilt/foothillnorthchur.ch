@@ -4,3 +4,6 @@ github.com/gorilla/context
 github.com/gorilla/mux
 # github.com/patrickmn/go-cache v2.1.0+incompatible
 github.com/patrickmn/go-cache
+# golang.org/x/net v0.0.0-20180826012351-8a410e7b638d
+golang.org/x/net/html
+golang.org/x/net/html/atom
