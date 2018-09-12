@@ -1,0 +1,21 @@
+<html>
+
+<head>
+	<title>Foothill Norch Church</title>
+	<link rel="stylesheet" href="./css/normalize.min.css">
+	<script src="./js/vue.min.js"></script>
+	<script src="./js/axios.min.js"></script>
+	<link rel="stylesheet" href="./css/main.min.css">
+</head>
+
+<body>
+	<div id="song-box-wrapper">
+		<div class="song-box" id="info">
+			<div v-for="song in playlist">
+				<a :href="'https://liftedkilt.github.io/' + song.videoID"><div class="song-button gradient" v-bind:style="{ 'background-image': 'url(http://192.168.86.92:8080/q150/https://i.ytimg.com/vi/' + song.videoID + '/hqdefault.jpg)' }"></div></a>
+			</div>
+		</div>
+	</div>
+	<script src="./js/main.js"></script>
+</body>
+</html>
