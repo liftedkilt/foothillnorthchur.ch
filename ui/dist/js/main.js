@@ -4,7 +4,7 @@ const vm = new Vue({
         playlist: []
     },
     mounted() {
-        axios.get("http://api.liftedkilt.xyz:8888/playlist")
+        axios.get("https://api.liftedkilt.xyz/playlist")
             .then(response => { this.playlist = response.data.videos })
     }
 });
