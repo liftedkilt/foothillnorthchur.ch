@@ -41,7 +41,7 @@ img {
 }
 a {
   text-decoration: none;
-  color: #050;
+  color: black;
 }
 
 .playlistbox {
@@ -65,7 +65,7 @@ a {
     grid-column: 2 / 3 ;
     align-self: center;
     text-align: left;
-    color: #050;
+    color: black;
     padding-left: 10px;
   }
 }
