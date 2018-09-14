@@ -1,7 +1,7 @@
 <template>
   <div class="playlistbox">
     <!-- <div v-for="song in playlist"> -->
-    <a v-for="song in playlist" :key="song.videoID" :href="'https://liftedkilt.github.io/' + song.videoID"><div class="v-thumb"><img v-bind:src="'https://images.liftedkilt.xyz/q100/https://i.ytimg.com/vi/' + song.videoID + '/mqdefault.jpg'"></div><div class="v-title">{{ song.videoTitle }}</div></a>
+    <a v-for="song in playlist" :key="song.videoID" :href="'https://lyrics.liftedkilt.xyz/' + song.videoID"><div class="v-thumb"><img v-bind:src="'https://images.liftedkilt.xyz/q100/https://i.ytimg.com/vi/' + song.videoID + '/mqdefault.jpg'"></div><div class="v-title">{{ song.videoTitle }}</div></a>
   <!-- </div> -->
   </div>
 </template>
