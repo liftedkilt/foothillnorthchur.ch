@@ -3,7 +3,6 @@
 	url = git@github.com:liftedkilt/liftedkilt.github.io.git
 	branch = master
 
-[submodule "lyrics/themes/kiss"]
-	path = lyrics/themes/kiss
-	url = git@github.com:ribice/kiss.git
-	branch = master
+[submodule "lyrics/themes/tale"]
+	path = lyrics/themes/tale
+	url = https://github.com/EmielH/tale-hugo.git
