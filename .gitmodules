@@ -5,4 +5,4 @@
 
 [submodule "lyrics/themes/tale"]
 	path = lyrics/themes/tale
-	url = https://github.com/EmielH/tale-hugo.git
+	url = https://github.com/liftedkilt/tale-hugo.git
